@@ -6,13 +6,13 @@ I think the best way to install conda is via Mambaforge, which pulls from `conda
 
     curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
     bash Mambaforge-$(uname)-$(uname -m).sh
-    
+
 ## Commands
 
 Create new environment called py310 that includes Python 3.10
 
     mamba create -n py310 python=3.10
-    
+
 List all environments you currently have installed
 
     mamba env list
@@ -20,11 +20,27 @@ List all environments you currently have installed
 Don't allow base environment to automatically be activated
 
     conda config --set auto_activate_base false
-    
+
 Run something inside virtual environment without activating the environment
 
     mamba run -n py310 python --version
-    
+
+Activate environment named py310
+
+    mamba activate py310
+
+Deactivate current environment
+
+    mamba deactivate
+
+List all packages installed in current environment
+
+    mamba list
+
+Install packages polars and sage
+
+    mamba install polars sage
+
 Install packages from requirements.txt file
 
     mamba install --file requirements.txt
